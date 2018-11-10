@@ -1,0 +1,59 @@
+Release debhelper/11.5.2 into unstable
+
+Format: 1.8
+Date: Sat, 10 Nov 2018 19:51:25 +0000
+Source: debhelper
+Binary: debhelper dh-systemd
+Architecture: source
+Version: 11.5.2
+Distribution: unstable
+Urgency: medium
+Maintainer: Debhelper Maintainers <debhelper@packages.debian.org>
+Changed-By: Niels Thykier <niels@thykier.net>
+Description:
+ debhelper  - helper programs for debian/rules
+ dh-systemd - debhelper add-on to handle systemd unit files - transitional pack
+Closes: 912560 912978 913329 913415
+Changes:
+ debhelper (11.5.2) unstable; urgency=medium
+ .
+   [ Luca Boccassi ]
+   * makefile.pm: Pass V=0 or V=1 to the make file depending on
+     whether "terse" is set in DEB_BUILD_OPTIONS.
+ .
+   [ Niels Thykier ]
+   * dh_gconf: Mark dh_gconf as deprecated (see #908845).
+   * Dh_Lib.pm: Separate lowest non-deprecated compat level and
+     the lowest compat level we generate "debhelper-compat (= X)"
+     relations for.
+   * Dh_Lib.pm: Open compat level 13 as an experimental compat
+     level.
+   * meson.pm: In compat 13, run tests with "meson test" rather
+     than "ninja test".  Thanks to Simon McVittie for the
+     suggestion.  (Closes: #912560)
+   * dh: Correctly include dh_installsystemduser in the sequence
+     in compat 12.  It was excluded due to an inverted boolean
+     meaning it was added in compat up to (and incl.) compat 11.
+     Thanks to Michael Biebl for reporting the issue.
+     (Closes: #913329)
+   * fr.po: Correct translations for dh_installman.1 which
+     incorrectly implied that dh_installman was deprecated.
+     Thanks to Laurent Bigonville for reporting the issue.
+     (Closes: #912978)
+ .
+   [ Helmut Grohne ]
+   * cmake.pm: Pass QMAKE_EXECUTABLE when cross-building.
+     (Closes: #913415)
+Checksums-Sha1:
+ c365643b4d3e1dd9f7886bd4ea72f25aaa4c077e 1689 debhelper_11.5.2.dsc
+ 98267154845995f0a13259d58f38570ab5e37855 477436 debhelper_11.5.2.tar.xz
+ cc504dc1061b1c8d3a37ee2800587e0058dc2daa 4577 debhelper_11.5.2_source.buildinfo
+Checksums-Sha256:
+ 88aa2622622049b26a6bf6fe3bdeec7f6b0569ac4db0e9b13ce15040ac574c04 1689 debhelper_11.5.2.dsc
+ 17d6841f084c732f30c6beea1f8de8e9b64c559ac654e9a6d8bfca39e5088b37 477436 debhelper_11.5.2.tar.xz
+ 2f9c1905fd0f9920b6ab5993de184399ff17dc06126b19ed0821ca6eda62a5d5 4577 debhelper_11.5.2_source.buildinfo
+Files:
+ 013f23abb3b3300e5aff2493d44898f7 1689 devel optional debhelper_11.5.2.dsc
+ 776b7462bba99464769276d8d3e2d2d2 477436 devel optional debhelper_11.5.2.tar.xz
+ 51deece6d2ce1e6b2eb87d337b5d64c8 4577 devel optional debhelper_11.5.2_source.buildinfo
+
