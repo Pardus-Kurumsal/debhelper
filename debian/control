@@ -19,7 +19,7 @@ Depends: autotools-dev,
 # Version 16 fixes #887482, version 17 fixes #889567
 # Constraint can be relaxed if packages do not rely/require any of the
 # above fixes
-         dh-autoreconf (>= 17~),
+         dh-autoreconf (>= 14),
 # Version constraint is to get a version of dh-strip-nondeterminism
 # without several bugs.  The constraint can be relaxed if an older
 # version is sufficient.
